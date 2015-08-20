@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>myDemo</title>
+    <link rel="stylesheet" href="./dist/css/reset.css"/>
+    <link rel="stylesheet" href="./dist/css/myFirst.css"/>
+    <style>
+        * {
+            min-height: 10000px;
+            font-size: 30px;
+        }
+        .index li {
+            height: 20px;
+            padding: 5px;
+            background: green;
+            border: 2px solid gold;
+            margin: 20px;
+        }
+        .fixed {
+            position: fixed;
+            right: 0;
+            top: 300px;
+            border: 2px solid gold;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<h1>hi</h1>
+<div>
+    <input type="button" id ="button1" value=”1″ onclick=""/>
+    <input type="button" id ="button2" value="2"/> </div>
+
+<input id="input" type="button" value="点我"/>
+
+<script>
+    //转17进制
+    var input = document.getElementsByTagName('input')[0];
+
+    function Counter(i) {
+        this.getCounter = function() {
+            alert(i++);
+        };
+    }
+    var count = new Counter(0);
+    input.addEventListener('click',count.getCounter,false);
+
+
+    document.onscroll = function (e) {
+        var e = e || window.event;
+        var fixedBar = document.getElementsByClassName('fixed')[0];
+        console.log(document.body.scrollTop);
+        if(document.body.scrollTop>300) {
+            fixedBar.style.display = '';
+        } else {
+            fixedBar.style.display = 'none';
+        }
+        fixedBar.onclick = function (e) {
+            document.body.scrollTop = 0;
+        }
+    }
+
+    function counter() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var date2 = new Date(year, 12, 31, 23, 59, 59);
+        var time = (date2 - date)/1000;
+        var day =Math.floor(time/(24*60*60))
+        var hour = Math.floor(time%(24*60*60)/(60*60))
+        var minute = Math.floor(time%(24*60*60)%(60*60)/60);
+        var second = Math.floor(time%(24*60*60)%(60*60)%60);
+        var str = year + "年还剩"+day+"天"+hour+"时"+minute+"分"+second+"秒";
+        document.getElementById("input").value = str;
+    }
+    window.setInterval("counter()", 1000);
+
+    function moveBtn(obj) {
+        var clone = obj.cloneNode(true);
+        var parent = obj.parentNode;
+        parent.appendChild(clone);
+        parent.removeChild(obj);
+    }
+</script>
+
+</div>
+</body>
+</html>

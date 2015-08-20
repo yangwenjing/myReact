@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>横排多图多广告</title>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: lightgrey;
+            padding: 10px;
+        }
+        .ec_img_ads {
+            padding: 10px;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+
+            background: white;
+        }
+        .ec_col {
+            width: 84px;
+            -webkit-flex: 0 0 84px;
+            flex: 0 0 84px;
+        }
+        .ec_col a {
+            width: 84px;
+            display: block;
+            text-decoration: none;
+            word-wrap: break-word;
+        }
+        .ec_col img {
+            width: 84px;
+            height: 84px;
+            margin-bottom: 6px;
+        }
+        .ec_col .ec_desc {
+            display: block;
+            line-height: 1.286em;
+            height: 38px;
+            font-size: 14px;
+            overflow: hidden;
+        }
+        .ec_col .ec_phone {
+            line-height: 2.25;
+            font-size: 14px;
+            color: #262626;
+        }
+        .ec_col .ec_phone:visited {
+            color: #262626;
+        }
+        .ec_col .ec_brand {
+            font-size: 12px;
+            display: block;
+            line-height: 1.6;
+            color: #777;
+        }
+        .ec_phone_icon {
+            background: url(//m.baidu.com/static/search/uibase/icon-lbs-1.png) no-repeat 0px 0px;
+            display: inline-block;
+            background-size: 150px 21px;
+            vertical-align: -2px;
+            line-height: 1;
+            width: 14px;
+            height: 14px;
+            margin-right: 3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="ec_img_ads">
+    <div class="ec_col ec_col1">
+        <a href="#1">
+            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2653982928,1730011276&fm=58"/>
+            <span class="ec_desc">这是一个比较长的描述</span>
+        </a>
+        <a href="#2" class="ec_phone"><span class="ec_phone_icon"></span>电话咨询</a>
+        <span class="ec_brand">去哪儿网</span>
+    </div>
+    <div class="ec_col ec_col2">
+        <div class="ec_ad_item">
+            <a href="#3">
+                <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2653982928,1730011276&fm=58"/>
+                <span class="ec_desc">blablabla</span>
+            </a>
+            <a href="tel:15210832596" class="ec_phone"><span class="ec_phone_icon"></span>电话咨询</a>
+            <span class="ec_brand">去哪儿网</span>
+        </div>
+    </div>
+    <div class="ec_col ec_col3">
+        <a href="#4">
+            <img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2653982928,1730011276&fm=58"/>
+            <span class="ec_desc">blablabla</span>
+        </a>
+        <a href="#5" class="ec_phone"><span class="ec_phone_icon"></span>电话咨询</a>
+        <span class="ec_brand">去哪儿网</span>
+
+    </div>
+</div>
+<div class="ec_ad">
+    
+</div>
+</body>
+</html>

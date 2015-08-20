@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<style>
+    .wrapper {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        align-items: center;
+        width: 1000px;
+        height: 500px;
+    }
+    .wrapper div {
+        width: 10px;
+        height: 10px;
+    }
+
+
+
+</style>
+
+<div class="wrapper">
+    <a href="1">1</a>
+    <a href="2">2</a>
+    <a href="3">3</a>
+</div>
+<script>
+    var matrix = [[1,2],[3,4]];
+    function deepCat(pre, cur) {
+        if(cur instanceof Array) {
+            var res = pre;
+            for(var i in cur) {
+                res = res.concat(deepCat([],cur[i]));
+            }
+        }
+        return pre.concat(cur);
+    }
+
+
+    var flatten = matrix.reduce(deepCat, []);
+
+</script>
+</body>
+</html>
