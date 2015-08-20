@@ -17,27 +17,41 @@
 
 .time {
   position: absolute;
-  width: 5px;
-  height: 15px;
-  background: red; }
-
-.time0 {
+  width: 2px;
+  height: 10px;
+  background: black;
   top: -50px;
-  left: 150px; }
-
-.time1 {
-  top: 150px;
-  right: -48px;
-  transform: rotateZ(90deg); }
-
-.time2 {
-  bottom: -50px;
-  left: 150px; }
-
-.time3 {
-  left: -48px;
-  top: 150px;
-  transform: rotateZ(-90deg); }
+  left: 147px;
+  transform-origin: 1px 200px; }
+  .time:nth-child(1) {
+    transform: rotateZ(30deg); }
+  .time:nth-child(2) {
+    transform: rotateZ(60deg); }
+  .time:nth-child(3) {
+    transform: rotateZ(90deg); }
+  .time:nth-child(4) {
+    transform: rotateZ(120deg); }
+  .time:nth-child(5) {
+    transform: rotateZ(150deg); }
+  .time:nth-child(6) {
+    transform: rotateZ(180deg); }
+  .time:nth-child(7) {
+    transform: rotateZ(210deg); }
+  .time:nth-child(8) {
+    transform: rotateZ(240deg); }
+  .time:nth-child(9) {
+    transform: rotateZ(270deg); }
+  .time:nth-child(10) {
+    transform: rotateZ(300deg); }
+  .time:nth-child(11) {
+    transform: rotateZ(330deg); }
+  .time:nth-child(12) {
+    transform: rotateZ(360deg); }
+  .time:nth-child(3n) {
+    width: 6px;
+    height: 15px;
+    transform-origin: 3px 200px;
+    background: red; }
 
 .hour, .minute, .second, .nail {
   position: absolute;
@@ -78,7 +92,7 @@
   top: 130px;
   left: 130px; }
 
-.nail:after {
+div.nail:after {
   content: "";
   position: absolute;
   display: block;

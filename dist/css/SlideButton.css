@@ -1,0 +1,19 @@
+.slideButton-lg {
+  width: 200px;
+  line-height: 1.5em;
+  font-size: 76.92308px;
+  display: inline-block; }
+
+.slideButton-sm {
+  width: 50px;
+  line-height: 1.5em;
+  font-size: 19.23077px;
+  display: inline-block; }
+
+.slideButton-md {
+  width: 100px;
+  line-height: 1.5em;
+  font-size: 38.46154px;
+  display: inline-block; }
+
+/*# sourceMappingURL=SlideButton.css.map */

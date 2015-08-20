@@ -42,10 +42,18 @@ var Clock = React.createClass({
     return (
       <div className="clock">
         <div className="plate">
-          <div className="time time0"></div>
-          <div className="time time1"></div>
-          <div className="time time2"></div>
-          <div className="time time3"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
+          <div className="time"></div>
           <div className="hour"></div>
           <div className="minute"></div>
           <div className="second"></div>
@@ -56,3 +64,8 @@ var Clock = React.createClass({
 
   }
 });
+
+React.render(
+<Clock />,
+  document.getElementById("mountClock")
+);

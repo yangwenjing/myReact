@@ -17,28 +17,26 @@
 }
 .time {
   position: absolute;
-  width: 5px;
-  height: 15px;
-  background: red;
-}
-.time0 {
+  width: 2px;
+  height: 10px;
+  background: black;
   top: -50px;
-  left: 150px;
+  left: 147px;
+  transform-origin: 1px 200px;
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      transform: rotateZ(30deg*$i);
+    }
+  }
+  &:nth-child(3n) {
+    width: 6px;
+    height: 15px;
+    transform-origin: 3px 200px;
+    background: red;
+  }
 }
-.time1 {
-  top: 150px;
-  right: -48px;
-  transform: rotateZ(90deg);
-}
-.time2 {
-  bottom: -50px;
-  left: 150px;
-}
-.time3 {
-  left: -48px;
-  top: 150px;
-  transform: rotateZ(-90deg);
-}
+
+
 .hour,.minute,.second,.nail {
   position: absolute;
   top: 130px;
