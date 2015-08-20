@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <style type="text/css">
+
+    div:not(.inner) p {
+        color: purple;
+    }
+    body {
+        font-size: 12px;
+    }
+
+    div.outer p {
+        color: orange;
+    }
+    .side {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        float: left;
+        font-size: 10px;
+    }
+        .side div {
+            flex:100px;
+            border: 2px solid black;
+            background: red;
+        }
+        .side div:nth-child(2) {
+            background: yellow;
+            z-index: 0;
+            font-size: 32em;
+        }
+        .side div:first-child {
+            z-index: 100;
+            font-size: 20em;
+        }
+        .side div:first-child:hover {
+            flex: 2 2 200px;
+            width: 400px;
+            margin-bottom: -100px;
+
+        }
+        .mian {
+            margin-left: 300px;
+            background: green;
+            min-height: 400px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="side">
+    <div>1</div>
+    <div>2</div>
+</div>
+<div class="mian">3</div>
+
+
+
+<script>
+    function b(x, y, a) {
+        arguments[2] = 10;
+    }
+    b(1, 2, 3);
+
+    var foo = 1;
+    function mian() {
+        alert(foo);
+        var foo = 2;
+        alert(this.foo);
+        this.foo = 3;
+    }
+    mian();
+    new mian();
+</script>
+</body>
+</html>

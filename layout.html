@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport">
+    <style>
+        @media screen and (min-device-width: 601px) {
+            .header,.sidebar,.content {
+                height: 200px;
+                background: red;
+                margin: 10px;
+            }
+            .sidebar {
+                float: left;
+            }
+            .content {
+                margin-left: 240px;
+            }
+
+        }
+        @media screen and (min-width:600px) {
+            .header,.sidebar,.content {
+                width: 100%;
+                height: 20%;
+                background: green;
+            }
+            h1 {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class='header'>
+    <h1>header</h1>
+</div>
+<div class="sidebar">
+    <h1>sidebar</h1>
+</div>
+<div class="content">
+    <h1>content</h1>
+</div>
+<script>
+    var result = []
+    function getParents(ele, result) {
+        if(!ele.parentNode) {
+            return result;
+        }
+
+        return getParents(ele.parentNode, result.push(ele.parentNode));
+    }
+</script>
+
+<script>
+    var range = 10000;
+    function printSimpleNumber (range) {
+        var begin = new Date();
+        var result = [],
+                except = [],
+                flag;
+        for(var i = 2;i<=range;i++) {
+            if(!except.indexOf(i)>=0) {
+                flag = false;
+                for(var item in result) {
+                    if(i%result[item]==0) {
+                        flag = true;
+                        break;
+                    }
+                }
+                if(!flag) {
+                    result.push(i);
+                    for(var times=2;times*i<=range;times++) {
+                        var val = times*i;
+                        if(except.indexOf(val)<0) {
+                            except.push(val);
+                        }
+                    }
+                }
+            }
+        }
+        var end = new Date();
+        console.log(end.getMilliseconds()-begin.getMilliseconds());
+        console.log(result.length);
+    }
+    printSimpleNumber(10000);
+</script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+//导航
+
+//Mixin
+/*屏幕宽度高度*/
+@mixin width($width:100%) {
+  width: $width;
+}
+@mixin height($height:100%) {
+  height: $height;
+}
+
+@mixin radius($lefttop:0, $righttop:0, $rightbottom:0, $leftbottom:0) {
+  -webkit-border-radius: $lefttop $righttop $rightbottom $leftbottom ;
+  -moz-border-radius: $lefttop $righttop $rightbottom $leftbottom ;
+  border-radius: $lefttop $righttop $rightbottom $leftbottom ;
+}
+
+//grids
+.box-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  font-size: 20px;
+  .box-item {
+    flex: 1;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid black;
+    background: #cccccc;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      marign-right: 0;
+    }
+  }
+}
+
+.modal {
+  display: none;
+}
+.modal.active {
+  @include width;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+
+  .panel {
+    width: 400px;
+    height: 400px;
+    background: #fff;
+    border: 2px solid black;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-left: -202px;
+    margin-top: -202px;
+
+  }
+}
+@for $i from 1 to 10 {
+  .col-#{$i} {
+    @include width(100/$i+"%");
+  }
+}
+
+@each $i in 2,3,4 {
+  .grid-#{$i} {
+    @include width(100/$i+"%");
+  }
+}
+.page {
+  padding: 5px;
+  margin: 2px;
+  display: inline-block;
+  border: 1px solid beige;
+  background: wheat;
+  box-shadow: 2px 2px 2px 1px darkgrey;
+  &:first-child {
+    @include radius(5px, 0, 0, 5px);
+  }
+  &:last-child {
+    @include radius(0, 5px, 5px, 0);
+  }
+  &:hover,
+  &.active {
+    background: ghostwhite;
+    box-shadow: none;
+    border: 1px solid wheat;
+    cursor: pointer;
+  }
+}
+
+.box {
+  display: flex;
+  background: green;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  .item {
+    flex: 1;
+    background: red;
+    margin-left: 10px;
+
+    &:first-child {
+      flex: 0 0 200px;
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  
+}

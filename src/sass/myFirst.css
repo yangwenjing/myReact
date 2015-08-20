@@ -1,0 +1,21 @@
+.col1 {
+  width: 80%; }
+
+.box-container {
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  font-size: 20px; }
+  .box-container .col1 {
+    flex: 1; }
+  .box-container .box-item {
+    flex: 1;
+    padding: 5px;
+    margin: 0 5px;
+    border: 1px solid black; }
+    .box-container .box-item:first-child {
+      margin: 0 5px 0 0; }
+    .box-container .box-item:last-child {
+      margin: 0 0 0 5px; }
+
+/*# sourceMappingURL=myFirst.css.map */
