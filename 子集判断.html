@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<script>
+    function subArr(arrA, arrB) {
+        if(arrA == []) return true;
+        return arrA.every(function(item,index,arr){
+                    if(arrB.indexOf(item)>=0)
+                        return true;
+                    else{
+                        return false;
+                    }
+                });
+    }
+</script>
+
+</body>
+</html>

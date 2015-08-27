@@ -4,16 +4,16 @@
 var SlideButton = React.createClass({displayName: "SlideButton",
   render: function () {
     return (
-      React.createElement("input", {className: "slideButton-"+this.props.size, type: "button"})
+      React.createElement("button", {className: "slideButton-"+this.props.size, name: "button"}, this.props.value)
     );
   }
 });
 
 React.render(
   React.createElement("div", null, 
-React.createElement(SlideButton, {size: "lg"}), 
-  React.createElement(SlideButton, {size: "sm"}), 
-  React.createElement(SlideButton, {size: "md"})
+React.createElement(SlideButton, {size: "lg", value: "大"}), 
+  React.createElement(SlideButton, {size: "sm", value: "中"}), 
+  React.createElement(SlideButton, {size: "md", value: "小"})
   ),
   document.getElementById("mountSlideButton")
 );
